@@ -12,14 +12,20 @@ categories = ["external-ffi-bindings", "multimedia::images", "multimedia::encodi
 
 [build-dependencies]
 pkg-config = "0.3.5"
+reqwest = {version="0.12.23", features = ["blocking", "json", "rustls-tls"]}
+zip = "6.0.0"
 
 [build-dependencies.bindgen]
 optional = true
 version = "0.69.0"
 
+
+
 [features]
-default = []
+default = ["vpx_1_13"]
 generate = ["bindgen"]
+vpx_1_13=[]
+vpx_1_12=[]
 
 [lib]
 name = "vpx_sys"
